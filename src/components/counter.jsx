@@ -29,6 +29,10 @@ class Counter extends Component {
         this.setState({ count: this.state.count + 1 });
     }
 
+    handleResetCounter = () => {
+        this.setState({ count: 0 });
+    }
+
     // one solution: wrapper function
     doHandldeIncrement = () => {
         this.handleIncrement({ id: 1 });
@@ -40,6 +44,7 @@ class Counter extends Component {
             <React.Fragment>
                 <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button onClick={() => this.handleIncrement(product)} className="btn btn-secondary btn-sm">Increment</button>
+                <button onClick={this.handleResetCounter} className="btn btn-secondary btn-sm m-2">Reset</button>
                 {this.renderTags()}
             </React.Fragment>
         );
@@ -60,3 +65,5 @@ class Counter extends Component {
 }
 
 export default Counter;
+
+//1:17:31 Composing Components
