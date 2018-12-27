@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        value: this.props.value
+        value: this.props.counter.value
     };
 
     styles = {
@@ -38,7 +38,7 @@ class Counter extends Component {
             <div>
                 <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
-                <button onClick={this.handleDecrement} className="btn btn-secondary btn-sm m-2">Decrement</button>
+                <button onClick={() => this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">Delete</button>
                 <button onClick={this.handleResetCounter} className="btn btn-secondary btn-sm m-2">Reset</button>
             </div>
         );
@@ -60,7 +60,7 @@ class Counter extends Component {
 
 export default Counter;
 
-//1:17:31 Composing Components
+// 1:43:57 Single Source of Truth
 
  /*
   // one solution: wrapper function to pass arguments
@@ -86,4 +86,7 @@ export default Counter;
 
      // wrap react component without using div
      <React.Fragment> </React.Fragment>
+
+     -- props: data that can be access by another component, read-only (public)
+     -- state: data that can only be access by the component who owns it (local)
 */
