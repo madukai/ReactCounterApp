@@ -5,13 +5,6 @@ class Counter extends Component {
         count: 0,
         tags: ['tag1', 'tag2', 'tag3']
     };
-    
-
-    /*
-    constructor() {
-        super(); // constructor of Component object
-        this.handleIncrement = this.handleIncrement.bind(this);
-    } */
 
     styles = {
         color: 'red',
@@ -67,3 +60,9 @@ class Counter extends Component {
 export default Counter;
 
 //1:17:31 Composing Components
+ /*
+  * bind call to have access to 'this'
+    constructor() {
+        super(); // constructor of Component object
+        this.handleIncrement = this.handleIncrement.bind(this);
+    } */
