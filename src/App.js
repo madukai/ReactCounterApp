@@ -14,6 +14,17 @@ class App extends Component {
         ]
     };
 
+    constructor(props) {
+        super(props);
+        console.log('App - Constructor');
+        //this.state = this.props.something;
+    }
+
+    componentDidMount() {
+        // Ajax call
+        console.log('App - Mounted');
+    }
+
     // reset
     handleReset = () => {
         const counters = this.state.counters.map(c => {
@@ -57,7 +68,7 @@ class App extends Component {
       render() {
           return (
               <React.Fragment>
-                  <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length} />
+              <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length} />
               <main className="container">
                       <Counters
                           counters={this.state.counters}
